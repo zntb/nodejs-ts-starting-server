@@ -15,11 +15,12 @@ if (process.env.NODE_ENV === 'development') {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.get('/', (req, res) => {
-  res.send('<h1>Hello from server!</h1>');
+app.get('/ping', (_req, res) => {
+  console.log('someone pinged here');
+  res.send('pong');
 });
 
-const port = process.env.PORT || 3000;
+const port = 4000;
 
 app.listen(port, () => {
   console.log(colors.cyan.underline(`Server listen on PORT ${port}`));

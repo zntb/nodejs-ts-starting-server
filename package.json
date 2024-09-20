@@ -2,33 +2,39 @@
   "name": "node-ts-starting-server",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
-  "type": "module",
+  "main": "app.js",
   "scripts": {
-    "build": "npx tsc",
-    "start": "node dist/app.js",
-    "dev": "rimraf dist && concurrently \"npx tsc --watch\" \"sleep 5 && nodemon -q dist/app.js\""
+    "tsc": "tsc",
+    "dev": "ts-node-dev src/app.ts",
+    "lint": "eslint .",
+    "start": "node build/app.js"
   },
   "keywords": [],
   "author": "zntb",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@stylistic/eslint-plugin": "^2.8.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
     "@types/node": "^22.1.0",
     "@types/nodemon": "^1.19.6",
     "colors": "^1.4.0",
     "concurrently": "^8.2.2",
-    "nodemon": "^3.1.4",
-    "typescript": "^5.5.4"
+    "eslint": "^9.10.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.6.0"
   },
   "dependencies": {
     "@types/body-parser": "^1.19.5",
     "body-parser": "^1.20.2",
     "dotenv": "^16.0.3",
-    "express": "^4.19.2",
+    "express": "^4.21.0",
     "morgan": "^1.10.0",
     "rimraf": "^6.0.1",
-    "status": "^0.0.13"
+    "status": "^0.0.13",
+    "ts-node": "^10.9.2"
   }
 }
